@@ -1,14 +1,17 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.richard1122'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.3'
+    compileSdkVersion this.compileSdkVersion
+    buildToolsVersion this.buildToolsVersion
     defaultConfig {
+        minSdkVersion this.minSdkVersion
         minSdkVersion 7
-        targetSdkVersion 22
-        versionCode 27
-        versionName "1.0.12"
+        versionCode 28
+        versionName "1.0.28"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -25,5 +28,5 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:recyclerview-v7:23.2.1'
+    compile 'com.android.support:recyclerview-v7:' + this.supportLibrariesVersion
 }

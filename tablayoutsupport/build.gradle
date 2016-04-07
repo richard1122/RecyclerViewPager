@@ -1,14 +1,10 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
-
+    compileSdkVersion this.compileSdkVersion
+    buildToolsVersion this.buildToolsVersion
     defaultConfig {
-        minSdkVersion 7
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion this.minSdkVersion
     }
     buildTypes {
         release {
@@ -19,6 +15,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:design:22.2.1'
+    compile 'com.android.support:design:' + this.supportLibrariesVersion
     compile project(':lib')
 }
